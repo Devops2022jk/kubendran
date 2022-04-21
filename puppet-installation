@@ -1,0 +1,51 @@
+Installation on master:
+
+$ sudo apt-get update
+$ sudo apt-get install wget
+$ wget https://apt.puppetlabs.com/puppet-release-bionic.deb
+$ sudo dpkg -i puppet-release-bionic.deb
+$ sudo apt-get install puppet-master
+$ apt policy puppet master
+$ vi /etc/hosts
+  <slave-ipaddress> puppet
+$ sudo nano /etc/default/puppet-master
+ JAVA_ARGS="-Xms512m -Xmx512m"  (add the line to above file)
+$ sudo systemctl restart puppet-master.service
+$ sudo ufw allow 8140/tcp
+ sudo lsof -i -P -n | grep LISTEN
+
+
+
+
+Installation on slave
+
+$ sudo apt-get update
+$ sudo apt-get install wget
+$ wget https://apt.puppetlabs.com/puppet-release-bionic.deb
+$ sudo dpkg -i puppet-release-bionic.deb
+$ sudo apt-get install puppet
+$ apt policy puppet master
+vi /etc/hosts
+  <master-ipaddress> puppet
+$ sudo systemctl restart puppet
+$ sudo systemctl enable puppet
+  sudo systemctl status puppet
+
+
+On master
+
+$ sudo mkdir -p /etc/puppet/code/environments/production/manifests
+
+$  vi /etc/puppet/code/environments/production/manifests/site.pp
+ 
+
+sudo puppet cert list
+sudo puppet cert sign --all
+
+On slave
+
+puppet agent -t  (to generate certificate : don't do this!)
+sudo puppet agent --test
+
+
+  
