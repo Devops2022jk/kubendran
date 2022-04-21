@@ -8,3 +8,19 @@ ensure=> 'installed',
 }
 }
 }
+
+
+
+class devops {
+
+if '/bin/which nginx' {
+
+$packages=['default-jdk','mysql-server']
+
+package{$packages:
+
+ensure=> installed,
+}
+}
+
+}
