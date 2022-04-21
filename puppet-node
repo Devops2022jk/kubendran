@@ -1,0 +1,11 @@
+node 'ip-172-31-39-192.us-west-2.compute.internal'{
+
+include node1
+
+}
+
+node 'ip-172-31-46-43.us-west-2.compute.internal'{
+
+include node2
+
+}
