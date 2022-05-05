@@ -1,0 +1,23 @@
+kubectl get pods --all-namespaces
+   28  top
+   29  vi nginx.yml
+   30  kubectl apply -f nginx.yml
+   31  kubectl get pods
+   32  kubectl get pods -o wide
+   33  curl 172.16.1.7
+   34  cat nginx.yml
+   35  kubectl get deployments
+   36  kubectl rollout status nginx-deployment
+   37  kubectl rollout status
+   38  kubectl rollout status nginx-deployment
+   39  kubectl rollout status deployment/nginx-deployment
+   40  kubectl get rs
+   41  kubectl get pods --show-labels
+   42  kubectl get pods
+   43  kubectl set image deployment/nginx-deployment nginx=nginx:1.16.1
+   44  kubectl get deployments
+   45  kubectl rollout status deployment/nginx-deployment
+   46  kubectl describe deployments
+   47  kubectl scale deployment/nginx-deployment --replicas=10
+   48  kubectl get pods
+   49  history
