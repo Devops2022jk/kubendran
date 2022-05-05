@@ -20,4 +20,13 @@ kubectl get pods --all-namespaces
    46  kubectl describe deployments
    47  kubectl scale deployment/nginx-deployment --replicas=10
    48  kubectl get pods
-   49  history
+    kubectl create service clusterip nginx --tcp=80:80
+   51  kubectl get service
+   52  curl 10.110.84.15
+   53  kubectl delete service nginx
+   54  kubectl create service nodeport nginx --tcp=80:80
+   55  kubectl get svc
+   56  kubectl delete service nginx
+   57  kubectl create service loadbalancer nginx --tcp=80:80
+   58  kubectl get svc
+
