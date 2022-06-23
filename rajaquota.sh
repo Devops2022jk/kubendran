@@ -28,3 +28,4 @@ echo "`quota ${USER} | sed -n '4p' | awk '{print $1}'` * 512 /1024/1024" | bc > 
 echo -e "CRIT: \c"; echo -e "Current Utilization quota of ${USER}: `cat ${TFILE}` MB";
 exit 2
 fi
+https://github.com/ramurn
